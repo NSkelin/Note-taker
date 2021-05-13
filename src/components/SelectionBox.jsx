@@ -6,8 +6,19 @@ function SelectionBox(props) {
 	const options = props.options;
 	const name = props.name;
 	const onChange = props.onChange;
+	const selectedGameTitle = props.selectedGameTitle;
 
-	const opt = options.map((option) => <option key={option}>{option}</option>);
+	const opt = options.map((option) => {
+		if (option === selectedGameTitle) {
+			return (
+				<option key={option} selected>
+					{option}
+				</option>
+			);
+		} else {
+			return <option key={option}>{option}</option>;
+		}
+	});
 
 	return (
 		<label>
@@ -24,6 +35,7 @@ SelectionBox.propTypes = {
 	options: PropTypes.array.isRequired,
 	name: PropTypes.string,
 	onChange: PropTypes.func,
+	selectedGameTitle: PropTypes.string,
 };
 
 module.exports = {

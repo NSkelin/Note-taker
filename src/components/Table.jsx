@@ -47,17 +47,36 @@ function Table(props) {
 		setRows(rows);
 	}
 
-	async function handleGameTitlesChange(gameTitle) {
+	async function handleAddGameTitle(gameTitle) {
 		let newGameTitles = [...gameTitles];
-
-		console.log(gameTitle);
 
 		// add new gameTitle to database
 		let result = await window.api.invoke("addTitle", gameTitle);
-		console.log(result);
 
 		// update page
 		newGameTitles.push(gameTitle);
+		setGameTitles(newGameTitles);
+	}
+
+	async function editGameTitle(gameTitle, newGameTitle) {
+		let result = await window.api.invoke(
+			"editGameTitle",
+			gameTitle,
+			newGameTitle
+		);
+
+		let newGameTitles = [...gameTitles];
+		let index = newGameTitles.indexOf(gameTitle);
+		newGameTitles[index] = newGameTitle;
+		setGameTitles(newGameTitles);
+	}
+
+	async function removeGameTitle(gameTitle) {
+		let result = await window.api.invoke("deleteGameTitle", gameTitle);
+
+		let newGameTitles = [...gameTitles];
+		let index = newGameTitles.indexOf(gameTitle);
+		newGameTitles.splice(index, 1);
 		setGameTitles(newGameTitles);
 	}
 
@@ -66,10 +85,13 @@ function Table(props) {
 			<TableInputForm
 				gameTitles={gameTitles}
 				categories={categories}
+				selectedGameTitle={selectedGameTitle}
 				onRowSubmit={handleRowChange}
 				onInputChange={this.handleInputChange}
 				onSelectedGameTitleChange={handleSelectedGameTitleChange}
-				onGameTitleSubmit={handleGameTitlesChange}
+				onGameTitleSubmit={handleAddGameTitle}
+				handleEdit={editGameTitle}
+				handleDelete={removeGameTitle}
 			/>
 			<TableDisplay headings={headings} rows={rows} rowID={1} />
 		</div>

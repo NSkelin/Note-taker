@@ -7,7 +7,15 @@ const {PropTypes} = require("prop-types");
 function TableInputForm(props) {
 	const gameTitles = props.gameTitles;
 	const categories = props.categories;
+	const selectedGameTitle = props.selectedGameTitle;
+
+	// functions
 	const onSelectedGameTitleChange = props.onSelectedGameTitleChange;
+	const onGameTitleSubmit = props.onGameTitleSubmit;
+	const handleEdit = props.handleEdit;
+	const handleDelete = props.handleDelete;
+
+	// state
 	const [selectedCategory, setSelectedCategory] = useState(categories[0]);
 	const [episodeNumber, setEpisodeNumber] = useState();
 	const [description, setDescription] = useState();
@@ -15,7 +23,7 @@ function TableInputForm(props) {
 	const [timeStamp, setTimeStamp] = useState();
 
 	function handleGameTitleSubmit(gameTitle) {
-		props.onGameTitleSubmit(gameTitle);
+		onGameTitleSubmit(gameTitle);
 	}
 
 	function handleRowSubmit() {
@@ -39,6 +47,9 @@ function TableInputForm(props) {
 				gameTitles={gameTitles}
 				onSelectChange={onSelectedGameTitleChange}
 				onGameTitleSubmit={handleGameTitleSubmit}
+				selectedGameTitle={selectedGameTitle}
+				handleEdit={handleEdit}
+				handleDelete={handleDelete}
 			/>
 			<SelectionBox
 				labelName="Category"
