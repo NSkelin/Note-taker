@@ -21,6 +21,8 @@ contextBridge.exposeInMainWorld("api", {
             "addTitle",
             "requestTitles",
             "requestTitleData",
+            "editGameTitle",
+            "deleteGameTitle",
         ];
         if (validChannels.includes(channel)) {
             let result = await ipcRenderer.invoke(channel, args);

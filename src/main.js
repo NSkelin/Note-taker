@@ -139,3 +139,14 @@ ipcMain.handle("requestTitles", async (event) => {
 ipcMain.handle("requestTitleData", async (event, title) => {
 	return data[title[0]];
 });
+
+ipcMain.handle("editGameTitle", async (event, title) => {
+	data[title[1]] = data[title[0]];
+	delete data[title[0]];
+	saveData(data);
+});
+
+ipcMain.handle("deleteGameTitle", async (event, title) => {
+	delete data[title[0]];
+	saveData(data);
+});
