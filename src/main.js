@@ -31,18 +31,19 @@ const createWindow = () => {
 
 // adds a new section to the data object
 function addTitle(title) {
-	console.log(title);
 	if ((title === null) | (title === "")) return "failed";
 	else if (!data[title]) {
 		let newTitle = {
-			"General": {},
-			"Gameplay": {},
-			"Graphics": {},
-			"Audio": {},
-			"Bugs & Performance": {},
-			"Other": {},
+			[title]: {
+				"General": {},
+				"Gameplay": {},
+				"Graphics": {},
+				"Audio": {},
+				"Bugs & Performance": {},
+				"Other": {},
+			},
 		};
-		data[title] = newTitle;
+		data.push(newTitle);
 
 		saveData(data);
 		return "success";
@@ -51,9 +52,33 @@ function addTitle(title) {
 	}
 }
 
+function getObject(objKey) {
+	for (let obj of data) {
+		if (obj[objKey]) {
+			return obj;
+		}
+	}
+	return false;
+}
+
+function getObjectsKeys() {
+	let keys = [];
+	for (let obj of data) {
+		let objKey = Object.keys(obj);
+		keys.push(objKey[0]);
+	}
+	return keys;
+}
+
+getObject("Valheim");
 // adds a new remark to the data object
 function addRemark(title, category, remark, sentiment, episodeNum, timestamp) {
-	let remarkObj = data[title][category][remark];
+	let dataObj = getObject(title);
+	let remarkObj;
+	if (dataObj) {
+		remarkObj = dataObj[title][category][remark];
+	} else return false;
+
 	let epName = "Episode " + episodeNum;
 	// if the remark already exists
 	if (remarkObj) {
@@ -77,7 +102,7 @@ function addRemark(title, category, remark, sentiment, episodeNum, timestamp) {
 				Timestamp: [timestamp],
 			},
 		};
-		data[title][category][remark] = newRemark;
+		dataObj[title][category][remark] = newRemark;
 	}
 	saveData(data);
 	return true;
@@ -133,20 +158,25 @@ ipcMain.handle("addTitle", async (event, data) => {
 });
 
 ipcMain.handle("requestTitles", async (event) => {
-	return Object.keys(data);
+	return getObjectsKeys();
 });
 
 ipcMain.handle("requestTitleData", async (event, title) => {
-	return data[title[0]];
+	let obj = getObject(title[0]);
+	return obj[title[0]];
 });
 
 ipcMain.handle("editGameTitle", async (event, title) => {
-	data[title[1]] = data[title[0]];
-	delete data[title[0]];
+	let obj = getObject(title[0]);
+	let objIndex = data.indexOf(obj);
+	let newObj = {[title[1]]: obj[title[0]]};
+	data.splice(objIndex, 1, newObj);
 	saveData(data);
 });
 
 ipcMain.handle("deleteGameTitle", async (event, title) => {
-	delete data[title[0]];
+	let obj = getObject(title[0]);
+	let objIndex = data.indexOf(obj);
+	data.splice(objIndex, 1);
 	saveData(data);
 });

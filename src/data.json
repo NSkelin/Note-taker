@@ -1,230 +1,249 @@
-{
-    "Dead Space": {
-        "General": {},
-        "Gameplay": {},
-        "Graphics": {},
-        "Audio": {},
-        "Bugs & Performance": {},
-        "Other": {}
+[
+    {
+        "Project Zomboid gg": {
+            "General": {
+                "werwe": {
+                    "Sentiment": "Positive",
+                    "Episode 1": {
+                        "Timestamp": [
+                            "2"
+                        ]
+                    }
+                }
+            },
+            "Gameplay": {},
+            "Graphics": {},
+            "Audio": {},
+            "Bugs & Performance": {},
+            "Other": {}
+        }
     },
-    "Project Zomboid": {
-        "General": {},
-        "Gameplay": {},
-        "Graphics": {},
-        "Audio": {},
-        "Bugs & Performance": {},
-        "Other": {}
+    {
+        "Darkwood": {
+            "General": {},
+            "Gameplay": {},
+            "Graphics": {},
+            "Audio": {},
+            "Bugs & Performance": {},
+            "Other": {}
+        }
     },
-    "Darkwood": {
-        "General": {},
-        "Gameplay": {},
-        "Graphics": {},
-        "Audio": {},
-        "Bugs & Performance": {},
-        "Other": {}
-    },
-    "Valheim": {
-        "General": {},
-        "Gameplay": {
-            "extreme grind": {
-                "Sentiment": "Negative",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
+    {
+        "Valheim": {
+            "General": {},
+            "Gameplay": {
+                "extreme grind": {
+                    "Sentiment": "Negative",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "hard to click the hitbox for using a cart": {
+                    "Sentiment": "Negative",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "Birch trees cant be replanted meaning you have to go farther and farther for fine wood which is important, core wood on the other hand is way less useful and replantable": {
+                    "Sentiment": "Negative",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "Wind is frequently against you when sailing": {
+                    "Sentiment": "Negative",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "Sea is mostly empty with the exception of 2 mobs that rarely show up leaving you to afk for up to 30 minutes while sailing": {
+                    "Sentiment": "Negative",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "Workbenches are required to build": {
+                    "Sentiment": "Negative",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "smoke from fires is a good mechanic": {
+                    "Sentiment": "Positive",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "building system": {
+                    "Sentiment": "Positive",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "building system snapping system when snapping above or below object": {
+                    "Sentiment": "Negative",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "Chimney top for chimneys would be nice": {
+                    "Sentiment": "Neutral",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "Building walls is very versatile but roofs are not making it hard to build anything not square": {
+                    "Sentiment": "Neutral",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "Logs and stumps can be hard to hit": {
+                    "Sentiment": "Neutral",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "Weather effects, especially snow storms": {
+                    "Sentiment": "Positive",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "Constant swarm of enemies when trying to resource gather": {
+                    "Sentiment": "Negative",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "sapling can be planted in areas they cant grow": {
+                    "Sentiment": "Positive",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "Wood and rock piles are not dynamic": {
+                    "Sentiment": "Neutral",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "Have to spam tap E for furnaces and charcoal kilns": {
+                    "Sentiment": "Negative",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
                 }
             },
-            "hard to click the hitbox for using a cart": {
-                "Sentiment": "Negative",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
+            "Graphics": {
+                "lack of a gamma option game is to dark": {
+                    "Sentiment": "Positive",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
                 }
             },
-            "Birch trees cant be replanted meaning you have to go farther and farther for fine wood which is important, core wood on the other hand is way less useful and replantable": {
-                "Sentiment": "Negative",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
+            "Audio": {},
+            "Bugs & Performance": {
+                "Camera moves around as if i spun my mouse really fun": {
+                    "Sentiment": "Negative",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "if hammer breaks when building you punch whatever you just built": {
+                    "Sentiment": "Positive",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "teleporter connected to wrong teleporter": {
+                    "Sentiment": "Positive",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
                 }
             },
-            "Wind is frequently against you when sailing": {
-                "Sentiment": "Negative",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "Sea is mostly empty with the exception of 2 mobs that rarely show up leaving you to afk for up to 30 minutes while sailing": {
-                "Sentiment": "Negative",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "Workbenches are required to build": {
-                "Sentiment": "Negative",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "smoke from fires is a good mechanic": {
-                "Sentiment": "Positive",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "building system": {
-                "Sentiment": "Positive",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "building system snapping system when snapping above or below object": {
-                "Sentiment": "Negative",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "Chimney top for chimneys would be nice": {
-                "Sentiment": "Neutral",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "Building walls is very versatile but roofs are not making it hard to build anything not square": {
-                "Sentiment": "Neutral",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "Logs and stumps can be hard to hit": {
-                "Sentiment": "Neutral",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "Weather effects, especially snow storms": {
-                "Sentiment": "Positive",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "Constant swarm of enemies when trying to resource gather": {
-                "Sentiment": "Negative",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "sapling can be planted in areas they cant grow": {
-                "Sentiment": "Positive",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "Wood and rock piles are not dynamic": {
-                "Sentiment": "Neutral",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "Have to spam tap E for furnaces and charcoal kilns": {
-                "Sentiment": "Negative",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            }
-        },
-        "Graphics": {
-            "lack of a gamma option game is to dark": {
-                "Sentiment": "Positive",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            }
-        },
-        "Audio": {},
-        "Bugs & Performance": {
-            "Camera moves around as if i spun my mouse really fun": {
-                "Sentiment": "Negative",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "if hammer breaks when building you punch whatever you just built": {
-                "Sentiment": "Positive",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "teleporter connected to wrong teleporter": {
-                "Sentiment": "Positive",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            }
-        },
-        "Other": {
-            "Cooking stations feel like they were ment to be spammed but leave tons of funky shadows if you do": {
-                "Sentiment": "Negative",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
-                }
-            },
-            "Low fps": {
-                "Sentiment": "Negative",
-                "Episode 0": {
-                    "Timestamp": [
-                        "0"
-                    ]
+            "Other": {
+                "Cooking stations feel like they were ment to be spammed but leave tons of funky shadows if you do": {
+                    "Sentiment": "Negative",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
+                },
+                "Low fps": {
+                    "Sentiment": "Negative",
+                    "Episode 0": {
+                        "Timestamp": [
+                            "0"
+                        ]
+                    }
                 }
             }
         }
     },
-    "GTFO": {
-        "General": {},
-        "Gameplay": {},
-        "Graphics": {},
-        "Audio": {},
-        "Bugs & Performance": {},
-        "Other": {}
+    {
+        "GTFO": {
+            "General": {},
+            "Gameplay": {},
+            "Graphics": {},
+            "Audio": {},
+            "Bugs & Performance": {},
+            "Other": {}
+        }
+    },
+    {
+        "Dead Space": {
+            "General": {},
+            "Gameplay": {},
+            "Graphics": {},
+            "Audio": {},
+            "Bugs & Performance": {},
+            "Other": {}
+        }
     }
-}
+]
