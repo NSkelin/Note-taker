@@ -4,14 +4,15 @@ const {SelectionBox} = require("./SelectionBox.jsx");
 const {PropTypes} = require("prop-types");
 
 function SelectAndEditor(props) {
-	const gameTitles = props.gameTitles;
-	const selectedGameTitle = props.selectedGameTitle;
+	// props
+	const selectOptions = props.selectOptions;
+	const selectedOption = props.selectedOption;
 
 	// functions
-	const onSelectChange = props.onSelectChange;
-	const onGameTitleSubmit = props.onGameTitleSubmit;
-	const handleDelete = props.handleDelete;
-	const handleEdit = props.handleEdit;
+	const passSelectionChangeHandler = props.passSelectionChangeHandler;
+	const handleNew = props.newHandler;
+	const handleDelete = props.deleteHandler;
+	const handleEdit = props.editHandler;
 
 	// state
 	const [editMode, setEditMode] = useState(false);
@@ -21,7 +22,9 @@ function SelectAndEditor(props) {
 	useEffect(() => {
 		window.addEventListener("click", function (e) {
 			// Clicked outside the div
-			if (!document.getElementById("test").contains(e.target)) {
+			if (
+				!document.getElementById("selectAndEditor").contains(e.target)
+			) {
 				setEditMode(false);
 				setNewMode(false);
 			}
@@ -35,16 +38,16 @@ function SelectAndEditor(props) {
 
 	function onEditClick() {
 		setEditMode(true);
-		setInputValue(selectedGameTitle);
+		setInputValue(selectedOption);
 	}
 
 	function onSaveClick() {
 		if (newMode) {
-			onGameTitleSubmit(inputValue);
 			setNewMode(false);
+			handleNew(inputValue);
 		} else if (editMode) {
 			setEditMode(false);
-			handleEdit(selectedGameTitle, inputValue);
+			handleEdit(selectedOption, inputValue);
 		}
 	}
 
@@ -54,26 +57,18 @@ function SelectAndEditor(props) {
 	}
 
 	function onDeleteClick() {
-		handleDelete(selectedGameTitle);
+		handleDelete(selectedOption);
 	}
 
 	function handleInputChange(event) {
 		setInputValue(event.target.value);
 	}
 
-	const title = () => {
-		if (editMode) {
+	const selectionOrInput = () => {
+		if (editMode || newMode) {
 			return (
 				<input
 					onChange={handleInputChange}
-					placeholder="Enter the title"
-					value={inputValue}
-				/>
-			);
-		} else if (newMode) {
-			return (
-				<input
-					onChange={(e) => setInputValue(e.target.value)}
 					placeholder="Enter the title"
 					value={inputValue}
 				/>
@@ -84,18 +79,18 @@ function SelectAndEditor(props) {
 					labelName="Game"
 					name="game"
 					id="Category"
-					options={gameTitles}
-					onChange={onSelectChange}
-					selectedGameTitle={selectedGameTitle}
+					options={selectOptions}
+					onChange={passSelectionChangeHandler}
+					selectedOption={selectedOption}
 				/>
 			);
 		}
 	};
 
 	return (
-		<div id="test">
+		<div id="selectAndEditor">
 			<button onClick={onEditClick}>edit</button>
-			{title()}
+			{selectionOrInput()}
 			<button onClick={onNewClick}>new</button>
 			<button onClick={onSaveClick}>save</button>
 			<button onClick={onDeleteClick}>delete</button>
@@ -104,10 +99,12 @@ function SelectAndEditor(props) {
 }
 
 SelectAndEditor.propTypes = {
-	gameTitles: PropTypes.array.isRequired,
-	selectedGameTitle: PropTypes.string,
-	onSelectChange: PropTypes.func,
-	onGameTitleSubmit: PropTypes.func,
+	selectOptions: PropTypes.array.isRequired,
+	selectedOption: PropTypes.string.isRequired,
+	passSelectionChangeHandler: PropTypes.func.isRequired,
+	newHandler: PropTypes.func.isRequired,
+	deleteHandler: PropTypes.func.isRequired,
+	editHandler: PropTypes.func.isRequired,
 };
 
 module.exports = {

@@ -37,19 +37,15 @@ function TableInputForm(props) {
 		props.onRowSubmit(newData);
 	}
 
-	// function handleInputChange(input) {
-	// 	props.onInputChange(input);
-	// }
-
 	return (
 		<div id="TableInputForm">
 			<SelectAndEditor
-				gameTitles={gameTitles}
-				onSelectChange={onSelectedGameTitleChange}
-				onGameTitleSubmit={handleGameTitleSubmit}
-				selectedGameTitle={selectedGameTitle}
-				handleEdit={handleEdit}
-				handleDelete={handleDelete}
+				selectOptions={gameTitles}
+				passSelectionChangeHandler={onSelectedGameTitleChange}
+				newHandler={handleGameTitleSubmit}
+				selectedOption={selectedGameTitle}
+				editHandler={handleEdit}
+				deleteHandler={handleDelete}
 			/>
 			<SelectionBox
 				labelName="Category"
