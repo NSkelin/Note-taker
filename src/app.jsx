@@ -1,48 +1,24 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
+const React = require("react");
+const ReactDOM = require("react-dom");
 const {Table} = require("./components/Table.jsx");
+const {PropTypes} = require("prop-types");
 
-class App extends React.Component {
-	constructor(props) {
-		super(props);
-		// this.handleRowChange = this.handleRowChange.bind(this);
-		this.handleInputChange = this.handleInputChange.bind(this);
-		this.state = {
-			gameTitles: props.gameTitles,
-			categories: props.categories,
-			headings: props.headings,
-			rows: props.rows,
-			game: props.gameTitles[0],
-			category: props.categories[0],
-			episodeNumber: "",
-			description: "",
-			sentiment: "Positive",
-			timeStamp: "",
-		};
-	}
+function App(props) {
+	const gameTitles = props.gameTitles;
+	const categories = props.categories;
+	const headings = props.headings;
+	const rows = props.rows;
 
-	handleInputChange(input) {
-		const {name, value} = input.target;
-		this.setState({[name]: value});
-	}
-
-	render() {
-		const gameTitles = this.state.gameTitles;
-		const categories = this.state.categories;
-		const headings = this.state.headings;
-		const rows = this.state.rows;
-
-		return (
-			<div>
-				<Table
-					gameTitles={gameTitles}
-					categories={categories}
-					headings={headings}
-					rows={rows}
-				/>
-			</div>
-		);
-	}
+	return (
+		<div>
+			<Table
+				gameTitles={gameTitles}
+				categories={categories}
+				headings={headings}
+				rows={rows}
+			/>
+		</div>
+	);
 }
 
 // gets all the initial data from server and parses it into a format readable by components and then renders it.
@@ -71,5 +47,12 @@ async function startApp() {
 		document.getElementById("root")
 	);
 }
+
+App.propTypes = {
+	gameTitles: PropTypes.array,
+	headings: PropTypes.array,
+	categories: PropTypes.array,
+	rows: PropTypes.array,
+};
 
 startApp();
