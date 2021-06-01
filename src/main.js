@@ -1,7 +1,20 @@
 const {app, BrowserWindow, ipcMain} = require("electron");
 const path = require("path");
-const data = require("./data.json");
 const fs = require("fs");
+// var data = require("./src/data.json");
+var data;
+
+async function readFile(filename) {
+	return fs.readFile(filename, (err, fileData) => {
+		if (err) {
+			console.log("err");
+			data = [];
+		} else {
+			data = JSON.parse(fileData);
+		}
+	});
+}
+readFile("./src/data.json");
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require("electron-squirrel-startup")) {
@@ -63,6 +76,7 @@ function getObject(objKey) {
 
 function getObjectsKeys() {
 	let keys = [];
+	console.log(data);
 	for (let obj of data) {
 		let objKey = Object.keys(obj);
 		keys.push(objKey[0]);
@@ -70,7 +84,6 @@ function getObjectsKeys() {
 	return keys;
 }
 
-getObject("Valheim");
 // adds a new remark to the data object
 function addRemark(title, category, remark, sentiment, episodeNum, timestamp) {
 	let dataObj = getObject(title);
