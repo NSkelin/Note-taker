@@ -76,7 +76,6 @@ function getObject(objKey) {
 
 function getObjectsKeys() {
 	let keys = [];
-	console.log(data);
 	for (let obj of data) {
 		let objKey = Object.keys(obj);
 		keys.push(objKey[0]);
@@ -176,7 +175,8 @@ ipcMain.handle("requestTitles", async (event) => {
 
 ipcMain.handle("requestTitleData", async (event, title) => {
 	let obj = getObject(title[0]);
-	return obj[title[0]];
+	if (obj === false) return false;
+	else return obj[title[0]];
 });
 
 ipcMain.handle("editGameTitle", async (event, title) => {
