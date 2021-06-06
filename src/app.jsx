@@ -25,6 +25,10 @@ function App(props) {
 async function startApp() {
 	let gameTitles = await window.api.invoke("requestTitles");
 	let data = await window.api.invoke("requestTitleData", gameTitles[0]);
+
+	if (data === false) data = [];
+	else if (!data) throw "failed to retrieve data";
+
 	let headings = ["Category", "Remark", "Sentiment"];
 	let categories = Object.keys(data);
 	let rows = [];
