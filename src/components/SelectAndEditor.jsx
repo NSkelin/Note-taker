@@ -10,7 +10,7 @@ function SelectAndEditor(props) {
 
 	// functions
 	const passSelectionChangeHandler = props.passSelectionChangeHandler;
-	const handleNew = props.newHandler;
+	const handleSave = props.saveHandler;
 	const handleDelete = props.deleteHandler;
 	const handleEdit = props.editHandler;
 
@@ -44,7 +44,7 @@ function SelectAndEditor(props) {
 	function onSaveClick() {
 		if (newMode) {
 			setNewMode(false);
-			handleNew(inputValue);
+			handleSave(inputValue);
 		} else if (editMode) {
 			setEditMode(false);
 			handleEdit(selectedOption, inputValue);
@@ -102,7 +102,7 @@ SelectAndEditor.propTypes = {
 	selectOptions: PropTypes.array.isRequired,
 	selectedOption: PropTypes.string.isRequired,
 	passSelectionChangeHandler: PropTypes.func.isRequired,
-	newHandler: PropTypes.func.isRequired,
+	saveHandler: PropTypes.func.isRequired,
 	deleteHandler: PropTypes.func.isRequired,
 	editHandler: PropTypes.func.isRequired,
 };

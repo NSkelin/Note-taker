@@ -42,7 +42,7 @@ function TableInputForm(props) {
 			<SelectAndEditor
 				selectOptions={gameTitles}
 				passSelectionChangeHandler={onSelectedGameTitleChange}
-				newHandler={handleGameTitleSubmit}
+				saveHandler={handleGameTitleSubmit}
 				selectedOption={selectedGameTitle}
 				editHandler={handleEdit}
 				deleteHandler={handleDelete}
