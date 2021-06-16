@@ -38,7 +38,7 @@ function TableInputForm(props) {
 	}
 
 	return (
-		<div id="TableInputForm">
+		<div id="TableInput">
 			<SelectAndEditor
 				selectOptions={gameTitles}
 				passSelectionChangeHandler={onSelectedGameTitleChange}
@@ -47,36 +47,44 @@ function TableInputForm(props) {
 				editHandler={handleEdit}
 				deleteHandler={handleDelete}
 			/>
-			<SelectionBox
-				labelName="Category"
-				name="category"
-				id="Category"
-				options={categories}
-				onChange={setSelectedCategory}
-			/>
-			<input
-				name="episodeNumber"
-				placeholder="Episode number"
-				onChange={(e) => setEpisodeNumber(e.target.value)}
-			/>
-			<input
-				name="description"
-				placeholder="Description"
-				onChange={(e) => setDescription(e.target.value)}
-			/>
-			<SelectionBox
-				labelName="Sentiment"
-				name="sentiment"
-				id="Sentiment"
-				options={["Positive", "Neutral", "Negative"]}
-				onChange={setSelectedSentiment}
-			/>
-			<input
-				name="timeStamp"
-				placeholder="Time stamp"
-				onChange={(e) => setTimeStamp(e.target.value)}
-			/>
-			<button onClick={handleRowSubmit}>Submit</button>
+			<div id="userInput">
+				<textarea
+					id="userDesc"
+					size="50"
+					placeholder="Description"
+					onChange={(e) => setDescription(e.target.value)}
+				/>
+
+				<div id="epDetails">
+					<input
+						id="userTimeStamp"
+						placeholder="Time stamp"
+						onChange={(e) => setTimeStamp(e.target.value)}
+					/>
+					<input
+						id="userEpNum"
+						placeholder="Episode number"
+						onChange={(e) => setEpisodeNumber(e.target.value)}
+					/>
+				</div>
+			</div>
+			<div id="selectAndSubmit">
+				<div id="dropdowns">
+					<SelectionBox
+						id="Category"
+						options={categories}
+						onChange={setSelectedCategory}
+					/>
+					<SelectionBox
+						id="Sentiment"
+						options={["Positive", "Neutral", "Negative"]}
+						onChange={setSelectedSentiment}
+					/>
+				</div>
+				<button className="buttonText" onClick={handleRowSubmit}>
+					Submit
+				</button>
+			</div>
 		</div>
 	);
 }

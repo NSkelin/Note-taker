@@ -7,9 +7,9 @@ function TableRow(props) {
 
 	const row = columns.map((column) => {
 		if (heading) {
-			return <th>{column}</th>;
+			return <th id="tableHeading">{column}</th>;
 		} else {
-			return <td>{column}</td>;
+			return <td className="tableColumns">{column}</td>;
 		}
 	});
 

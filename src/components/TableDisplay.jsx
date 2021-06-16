@@ -11,12 +11,14 @@ function TableDisplay(props) {
 		<TableRow key={row[rowID]} columns={row} />
 	));
 	return (
-		<table>
-			<thead>
-				<TableRow columns={headings} heading={true} />
-			</thead>
-			<tbody>{rowElements}</tbody>
-		</table>
+		<div id="TableDisplay">
+			<table id="table">
+				<thead>
+					<TableRow columns={headings} heading={true} />
+				</thead>
+				<tbody>{rowElements}</tbody>
+			</table>
+		</div>
 	);
 }
 

@@ -76,8 +76,6 @@ function SelectAndEditor(props) {
 		} else {
 			return (
 				<SelectionBox
-					labelName="Game"
-					name="game"
 					id="Category"
 					options={selectOptions}
 					onChange={passSelectionChangeHandler}
@@ -89,11 +87,19 @@ function SelectAndEditor(props) {
 
 	return (
 		<div id="selectAndEditor">
-			<button onClick={onEditClick}>edit</button>
+			<button className="buttonIMG" onClick={onEditClick}>
+				edit
+			</button>
 			{selectionOrInput()}
-			<button onClick={onNewClick}>new</button>
-			<button onClick={onSaveClick}>save</button>
-			<button onClick={onDeleteClick}>delete</button>
+			<button className="buttonIMG" onClick={onNewClick}>
+				new
+			</button>
+			<button className="buttonIMG" onClick={onSaveClick}>
+				save
+			</button>
+			<button className="buttonIMG" onClick={onDeleteClick}>
+				delete
+			</button>
 		</div>
 	);
 }

@@ -10,14 +10,12 @@ function App(props) {
 	const rows = props.rows;
 
 	return (
-		<div>
-			<Table
-				gameTitles={gameTitles}
-				categories={categories}
-				headings={headings}
-				rows={rows}
-			/>
-		</div>
+		<Table
+			gameTitles={gameTitles}
+			categories={categories}
+			headings={headings}
+			rows={rows}
+		/>
 	);
 }
 
