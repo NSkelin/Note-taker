@@ -27,15 +27,22 @@ async function startApp() {
 	if (data === false) data = [];
 	else if (!data) throw "failed to retrieve data";
 
-	let headings = ["Category", "Remark", "Sentiment"];
+	let headings = ["Category", "Remark", "Sentiment", "Count", ""];
 	let categories = Object.keys(data);
 	let rows = [];
 
 	// parse data into displayable rows for data tables
+	let deleteBut = <button>X</button>;
+	let count = (
+		<div>
+			10
+			<button>eye</button>
+		</div>
+	);
 	for (const category in data) {
 		for (const remark in data[category]) {
 			let sentiment = data[category][remark].Sentiment;
-			rows.push([category, remark, sentiment]);
+			rows.push([category, remark, sentiment, count, deleteBut]);
 		}
 	}
 
